@@ -34,3 +34,5 @@
 # Pastas
 .vscode/
 src/output/
+
+*.ini
