@@ -1,25 +1,24 @@
 #include <iostream>
-
 using namespace std;
-
-int main(){
-    int num, i;
-    int max = 100;
-    bool primo = 1;
-
-    cout << "Numeros primos entre 1 e " << max << ": \n";
-    for(num=2; num<=max; num++){
-        for(i=2; i<=num/2;i++){
-            if (i!=num && num%i == 0){
-                primo = false;
-                break;
+int main(void)
+{
+    bool primo;
+    cout << "Numeros primos entre 1 e 100:" << endl;
+    cout << "2" << endl;
+    for (int i = 3; i <= 100; i++)
+    {
+        primo = false;
+        for (int j = 2; j <= (i / 2); j++)
+        {
+            if (i % j == 0)
+            {
+               primo=true;
+               break;
             }
         }
-        if(primo)
-            cout << num << " ";
-        primo = 1;
+        !(primo)?cout << i << endl:cout << "";
+
     }
-    cout << endl;
 
     return 0;
 }

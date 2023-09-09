@@ -1,33 +1,20 @@
 #include <iostream>
-
 using namespace std;
+int main(void)
+{
+    int fib;
+    int a = 0, b = 1, c = 0, qtd = 0;
+    cout << "Digite a quantidade de numeros para a sequencia de Fibonacci: " << endl;
+    cin >> fib;
+    while (qtd < fib)
+    {
+        cout << c << " ";
+        a = b;
+        b = c;
+        c = a + b;
+        qtd++;
 
-int main(){
-    int num, f_, f__, fn, i;
-    cout << "Digite um inteiro: ";
-    cin >> num;
-
-    num = abs(num);
-    // f(0) = 0
-    f_ = 0;
-    // f(1) = 1
-    f__ = 1;
-
-    if(num == 0)
-        cout << "F(0) = "<< 0 <<endl;
-    else if(num==1)
-        cout << "F(1) = "<< 1 <<endl;
-    else{ 
-        // f(n) =  f(n-1) + f(n-2)
-        for(i = 1; i<num; i++){
-            fn = f_ + f__;
-            f_ = f__;
-            f__ = fn;
-        }
-
-        cout << "F("<< num << ") = "<< fn <<endl;
     }
 
-
-
+    return 0;
 }

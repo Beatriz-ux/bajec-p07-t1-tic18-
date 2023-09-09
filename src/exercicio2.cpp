@@ -1,31 +1,21 @@
 #include <iostream>
-
 using namespace std;
+int main(void)
+{
+    int num, invert=0 , aux;
+    cout << "Digite um numero: ";
+    cin >> num;
+    aux=num;
+    //14541
+    do{
+        invert = invert * 10 + aux % 10;
+        aux = aux / 10;
+    }while(aux != 0);
 
-int main(){
-    int numero, i, aux;
-    bool pal = 1;
-
-    cout << "Digite um inteiro: ";
-    cin >> numero;
-
-    aux = numero;
-    for (i = 0; aux>0; i++, aux/=10);
-    for (aux = 1, --i; i>0;aux*=10, i--); 
-
-    while(numero>9){
-        if (numero%10 != numero/aux){
-            pal = false;
-            break;
-        }else{
-            numero/=10;
-            aux/=10;
-            numero -= (numero/aux)*aux;
-            aux/=10;
-        }
-    }
-    cout << ((pal)? "O numero eh palindromo": "O numero nao eh palindromo") << endl;
-
-
+    if (num == invert)
+        cout << "O numero " << num << " eh palindromo" << endl;
+    else
+        cout << "O numero " << num << " nao eh palindromo" << endl;
+    
     return 0;
 }

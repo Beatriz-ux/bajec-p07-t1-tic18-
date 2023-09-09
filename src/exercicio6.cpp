@@ -1,34 +1,30 @@
 #include <iostream>
-#include <iomanip>
-
 using namespace std;
+int main(void)
+{
+    double n1, n2, n3, media;
+    long int matricula;
+    cout<<fixed;
+    cout.precision(1);
 
-int main(){
-    int matc, i; 
-    float notas[3], media=0;
-    char continuar = 1;
-
-    cout << fixed << setprecision(2);
     do{
-        cout << "Digite matricula do aluno: ";
-        cin >> matc;
-
-        for(i=0; i<3; i++){
-            cout << "Nota" << i+1 << " = ";
-            cin >> notas[i];
-            media+=notas[i];
+        cout << "Digite a matricula do aluno, caso queira encerrar digite 0: ";
+        cin >> matricula;
+        if(matricula == 0){
+            break;
         }
+        cout << "Digite a primeira nota: ";
+        cin >> n1;
+        cout << "Digite a segunda nota: ";
+        cin >> n2;
+        cout << "Digite a terceira nota: ";
+        cin >> n3;
+        media = (n1 + n2 + n3)/3;
+        cout << "MATRICULA"<<"\t\tNOTA1"<<"\tNOTA2"<<"\tNOTA3"<<"\tMEDIA"<< endl;
+        cout <<"=================================================================="<< endl;
+        cout << matricula << "\t\t" << n1 << "\t" << n2 << "\t" << n3 << "\t" << media << endl;
 
-        cout << "\nMATRICULA\tNOTA1\tNOTA2\tNOTA3\tMEDIA\n";
-        cout << "===========================================\n";
-        cout << setw(8)<< matc << "\t" << notas[0] << "\t" << notas[1] << "\t" << notas[2] << "\t" << media/3 << "\n\n";  
-        media = 0;
-
-        cout << "Deseja cadastrar outro aluno (S/N)? ";
-        cin >> continuar;
-        continuar = (tolower(continuar) == 's')? 1 : 0;
-    }while(continuar);
-
-
+    }while(matricula !=0);
+    
     return 0;
 }

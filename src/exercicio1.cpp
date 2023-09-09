@@ -1,20 +1,21 @@
 #include <iostream>
 
+#include <iostream>
 using namespace std;
-
-int main(){
-    int i;
-
-    // a)
-    for(i=1; i<=100; i++){
-        if(i % 3 == 0)
+int main(void)
+{
+    for (int i = 1; i <= 100; i++)
+    {
+        cout << i << " ";
+        if (!(i % 3))
+        {
             cout << "Fizz";
-        if(i % 5 == 0)
+        }
+        if (!(i % 5))
+        {
             cout << "Buzz";
-        if(!(i % 3 == 0) && !(i % 5 == 0))
-            cout << i;
+        }
         cout << endl;
     }
-
     return 0;
 }

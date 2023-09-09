@@ -1,32 +1,27 @@
 #include <iostream>
-
+#include <cmath>
 using namespace std;
-
-int main(){
-    int num, i, countD, digito, aux, pot;
-    int soma = 0;
-
-    cout << "Digite um inteiro: ";
+int main(void)
+{
+    int num, separa=0 , aux, dig=0;
+    cout << "Digite um numero: ";
     cin >> num;
-    num = abs(num);
-    aux = num;
-
-    // descobrindo quantidade de digitos
-    for(countD = 1; aux/10>0; countD++, aux/=10);
-
-    aux = num;
-    while(aux>0){
-        digito = aux%10;
-        pot = digito;
-        aux /= 10;
-        for(i=1; i<countD; i++)
-            digito *= pot;
-        soma += digito;
+    aux=num;
+    while(aux != 0)
+    {
+        dig++;
+        aux = aux / 10;
+    }
+    aux=num;
+    while(aux != 0)
+    {
+        separa = pow((aux % 10),dig) + separa;
+        aux = aux / 10;
     }
 
-    if(soma == num)
-        cout << num <<" eh um numero armstrong.\n";
-    else
-        cout << num <<" nao eh um numero armstrong.\n";
+    (separa == num) ? cout << "O numero " << num << " eh um numero de Armstrong" : cout << "O numero " << num << " nao eh um numero de Armstrong";
 
+    
+    
+    return 0;
 }
